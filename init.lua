@@ -19,10 +19,11 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   {
-    'goolord/alpha-nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    "catppuccin/nvim",
+    lazy = false,
+    name = "catppuccin",
+    priority = 1000
   },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' }
@@ -32,8 +33,6 @@ local plugins = {
 local opts = {}
 
 require("lazy").setup(plugins, opts)
-
-require("alpha").setup(require("alpha.themes.dashboard").config)
 
 local builtin = require("telescope.builtin")
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
