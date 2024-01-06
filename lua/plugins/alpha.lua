@@ -1,5 +1,6 @@
 return {
   "goolord/alpha-nvim",
+  event = "VimEnter", -- load plugin after all configuration is set
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },

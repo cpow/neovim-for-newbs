@@ -1,6 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    event = { "BufReadPre", "BufNewFile" }, -- load when a buffer is opened or created
     build = ":TSUpdate",
     config = function()
       local config = require("nvim-treesitter.configs")
