@@ -4,8 +4,12 @@ return {
 		"leoluz/nvim-dap-go",
 		"rcarriga/nvim-dap-ui",
     "tpope/vim-fugitive",
+    "folke/trouble.nvim",
 	},
-	config = function()
+  config = function()
+    local dap = require("dap")
+    local dapui = require("dapui")
+
     require("dapui").setup()
     require("dap-go").setup()
 
