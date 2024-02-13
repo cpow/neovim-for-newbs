@@ -1,9 +1,11 @@
 return {
   {
-    "hrsh7th/cmp-nvim-lsp"
+    "hrsh7th/cmp-nvim-lsp",
+    lazy = true, -- we let nvim-cmp load this for us
   },
   {
     "L3MON4D3/LuaSnip",
+    lazy = true, -- we let nvim-cmp load this too
     dependencies = {
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
@@ -11,6 +13,7 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter", -- load cmp after entering insert mode
     config = function()
       local cmp = require("cmp")
       require("luasnip.loaders.from_vscode").lazy_load()
